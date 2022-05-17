@@ -1,0 +1,16 @@
+{
+    "name": "LegendaryTools.MonobehaviourFacade",
+    "rootNamespace": "",
+    "references": [
+        "GUID:24044e8960e64a144b7a05351e2cc6ea"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
