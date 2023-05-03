@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LegendaryTools
 {
-    [SingletonBehaviourAttribute(true, true, true)]
+    [SingletonBehaviour(true, true, true)]
     public class MonoBehaviourFacade : SingletonBehaviour<MonoBehaviourFacade>
     {
         public event Action OnUpdate;
