@@ -6,7 +6,7 @@ using UnityEngine;
 namespace LegendaryTools
 {
     [SingletonBehaviour(true, true, true)]
-    public class MonoBehaviourFacade : SingletonBehaviour<MonoBehaviourFacade>
+    public class MonoBehaviourFacade : SingletonBehaviour<MonoBehaviourFacade>, IMonoBehaviourFacade
     {
         public event Action OnUpdate;
         public event Action OnFixedUpdate;
@@ -59,8 +59,16 @@ namespace LegendaryTools
 
         private void OnDisable()
         {
-            Debug.LogError($"{nameof(MonoBehaviourFacade)} cannot be disabled.");
-            gameObject.SetActive(true);
+#if !UNITY_EDITOR
+            Debug.LogError($"{nameof(MonoBehaviourFacade)} should not be disabled.");
+#endif
+        }
+
+        private void OnDestroy()
+        {
+#if !UNITY_EDITOR
+            Debug.LogError($"{nameof(MonoBehaviourFacade)} should not be destroyed.");
+#endif
         }
     }
 }
