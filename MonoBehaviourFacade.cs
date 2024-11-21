@@ -13,6 +13,7 @@ namespace LegendaryTools
         public event Action OnLateUpdate;
         public event Action<bool> OnApplicationPaused;
         public event Action<bool> OnApplicationFocused;
+        public event Action OnApplicationQuitted;
         
         private readonly ConcurrentQueue<Action> actionQueue = new ConcurrentQueue<Action>();
 
@@ -67,6 +68,11 @@ namespace LegendaryTools
         private void OnApplicationPause(bool pauseStatus)
         {
             OnApplicationPaused?.Invoke(pauseStatus);
+        }
+        
+        void OnApplicationQuit()
+        {
+            OnApplicationQuitted?.Invoke();
         }
 
         private void OnDisable()
